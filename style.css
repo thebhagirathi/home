@@ -1,0 +1,314 @@
+/* Resetting some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border do not affect element's width/height */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;  /* Clean and modern font */
+    background-color: #f4f7fc;  /* Light background for the body */
+    color: #333;  /* Default text color */
+    line-height: 1.6;  /* Line height for readability */
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #00115a, #2e7d32); /* Gradient background for header */
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 600;  /* Bold title */
+    margin: 0;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #333;  /* Dark background for navigation bar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;  /* Smooth hover transition */
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #4CAF50;  /* Green background on hover */
+    color: white;
+    border-radius: 5px;  /* Rounded corners */
+}
+
+/* Quotes Section Styling */
+#quotes {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(250, 250, 250);
+}
+
+#quotes h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* Styling for individual quotes */
+.quotes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    padding: 15px;
+    border-left: 5px solid #4CAF50;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.quote:hover {
+    transform: translateY(-5px); /* Hover effect for quotes */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.quote:before {
+    content: '';
+    font-size: 3rem;
+    color: #4CAF50;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+
+.quote:after {
+    content: '"';
+    font-size: 3rem;
+    color: #4CAF50;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+}
+
+/* Responsive Design for Quotes Section */
+@media (max-width: 768px) {
+    .quotes-container {
+        grid-template-columns: 1fr; /* Stack quotes on top of each other on smaller screens */
+    }
+
+    #quotes h2 {
+        font-size: 2rem;
+    }
+
+    .quote {
+        font-size: 1rem;
+    }
+}
+
+
+/* Main Content Styling */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(32, 18, 18, 0.527);
+}
+
+main h2 {
+    font-size: 2.5rem;
+    color: #051a62;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1rem;
+    color: #0d0c0c;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px); /* Button animation on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Scroll-to-Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;  /* Hidden by default */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);  /* Button hover effect */
+}
+
+/* Form Styling */
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #000000;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #9a0303;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;  /* Remove the outline on focus */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;  /* Smaller font size for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;  /* Full-width button on mobile */
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    #scrollTopBtn {
+        bottom: 20px;
+        right: 20px;
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;  /* Even smaller font for very small screens */
+    }
+
+    form input,
+    form textarea {
+        padding: 10px;  /* Smaller padding on form fields */
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.8rem;  /* Small footer font size */
+    }
+}
