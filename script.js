@@ -1,44 +1,408 @@
-// JavaScript for Button Click Alert
-document.addEventListener('DOMContentLoaded', function() {
-    const button = document.querySelector('button');  // Select the button element
-
-    button.addEventListener('click', function() {
-        alert('use chatgpt bro, you can also create!');  // Display an alert when button is clicked
-    });
-});
-
-// Scroll-to-Top Button
-window.addEventListener('scroll', function() {
-    const scrollTopButton = document.getElementById('scrollTopBtn');  // Get scroll-to-top button
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollTopButton.style.display = "block";  // Show the button if scrolled down
-    } else {
-        scrollTopButton.style.display = "none";  // Hide the button if at the top
-    }
-});
-
-// Function to scroll to the top when the button is clicked
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'  // Smooth scroll effect
-    });
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// Form Validation (Optional)
-function validateForm(event) {
-    const name = document.getElementById('name').value;  // Get the value of the 'name' input
-    const email = document.getElementById('email').value;  // Get the value of the 'email' input
-    const message = document.getElementById('message').value;  // Get the value of the 'message' input
+/* Body */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;  /* Clean and modern font */
+    background-color: #f4f7fc;  /* Light background for the body */
+    color: #333;  /* Default text color */
+    line-height: 1.6;  /* Line height for readability */
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
 
-    if (name === '' || email === '' || message === '') {
-        event.preventDefault();  // Prevent form submission if any field is empty
-        alert('Please fill out all the fields.');
-    } else {
-        alert('Form submitted successfully!');
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #00115a, #2e7d32); /* Gradient background for header */
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 600;  /* Bold title */
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin: 0 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #4CAF50;
+}
+
+/* Product Section */
+#products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#products h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: calc(33% - 40px);
+    vertical-align: top;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.product-card .buy-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .buy-btn:hover {
+    background-color: #45a049;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Payment Modal Styling */
+.payment-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.payment-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Close Button */
+.payment-modal .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.payment-modal .close:hover,
+.payment-modal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Image in the Modal */
+.payment-modal-image {
+    margin-bottom: 20px; /* Space between the image and title */
+}
+
+.payment-logo {
+    width: 150px; /* Size of the image */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Payment Options Styling */
+.payment-options {
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.payment-option:hover {
+    background-color: #45a049;
+}
+
+/* Payment Details Form Styling */
+.payment-details {
+    display: none;
+}
+
+.payment-details label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.payment-details input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.payment-details button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.payment-details button:hover {
+    background-color: #45a049;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* About Section */
+#about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+    /* scroll style */
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9; /* Light background color */
+    }
+    
+    .content {
+        height: 2000px; /* This is just to create a scrollable page */
+        text-align: center;
+        padding: 50px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+    }
+    
+    .scroll-btn {
+        position: fixed;
+        right: 20px; /* Right corner positioning */
+        padding: 15px 25px;
+        background: linear-gradient(135deg, #6e7bff, #667eea); /* Gradient background */
+        color: white;
+        border: 2px solid transparent;
+        border-radius: 30px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        z-index: 1000;
+    }
+    
+    /* Hover Effect */
+    .scroll-btn:hover {
+        background: linear-gradient(135deg, #667eea, #6e7bff); /* Reversed gradient on hover */
+        transform: translateY(-4px); /* Lift effect */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    }
+    
+    /* Stacked button positioning */
+    #scrollTop {
+        bottom: 80px; /* Positioned slightly above the scroll-to-bottom button */
+    }
+    
+    #scrollBottom {
+        bottom: 20px; /* Positioned at the bottom */
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .scroll-btn {
+        padding: 10px 15px;
+        font-size: 16px;
+        }
+    
+        #scrollTop {
+        bottom: 60px; /* Adjust for smaller screens */
+        }
+    
+        #scrollBottom {
+        bottom: 20px; /* Adjust for smaller screens */
+        }
+    }
+    
+    /* Make buttons only visible when needed */
+    #scrollTop, #scrollBottom {
+        display: none; /* Hidden initially */
+    }
+    
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 40px);
     }
 }
 
-// Add event listener to the form submission
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', validateForm);
+@media (max-width: 480px) {
+    .product-card {
+        width: calc(100% - 40px);
+    }
+    nav a {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    footer p {
+        font-size: 0.9rem;
+    }
+}
