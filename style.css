@@ -1,11 +1,10 @@
-/* General Reset */
+/* Resetting some default browser styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding and border do not affect element's width/height */
 }
 
-/* Body */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;  /* Clean and modern font */
     background-color: #f4f7fc;  /* Light background for the body */
@@ -31,28 +30,42 @@ header h1 {
     margin: 0;
 }
 
-/* Navigation */
+/* Navigation Bar Styling */
 nav {
     background: #333;
     color: white;
     padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 12px 20px;
-    font-size: 1rem;
-    margin: 0 15px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;  /* Smooth hover transition */
+    padding: 5px 10px;
 }
 
 nav a:hover {
-    background-color: #4CAF50;
+    background-color: #4CAF50;  /* Green background on hover */
+    color: white;
+    border-radius: 5px;  /* Rounded corners */
 }
-
 /* Product Section */
 #products {
     padding: 40px 20px;
