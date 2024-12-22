@@ -3,118 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>time pass</title>
+    <title>Time Pass - Shop</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to css file -->
 </head>
 <body>
 
+    <!-- Home Section -->
+    <section id="home">
     <header>
-        <h1>Welcome Losers</h1>
+        <h1>THEBHAGIRATHI</h1>
     </header>
+    </section>
+    
 
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#products">Products</a>
         <a href="#contact">Contact</a>
     </nav>
-    <!-- my quotes -->
-    <section id="quotes">
-        <h2>Inspirational Quotes</h2>
-        <div class="quotes-container">
-            <blockquote class="quote">
-                "The only way to do great work is to love what you do." - Steve Jobs
-            </blockquote>
-            <blockquote class="quote">
-                "In the middle of every difficulty lies opportunity." - Albert Einstein
-            </blockquote>
-            <blockquote class="quote">
-                "Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill
-            </blockquote>
-            <blockquote class="quote">
-                "It does not matter how slowly you go as long as you do not stop." - Confucius
-            </blockquote>
-            <blockquote class="quote">
-                "What we achieve inwardly will change outer reality." - Plutarch
-            </blockquote>
-            <blockquote class="quote">
-                "Believe you can and you're halfway there." - Theodore Roosevelt
-            </blockquote>
-            <blockquote class="quote">
-                "You miss 100% of the shots you don't take." - Wayne Gretzky
-            </blockquote>
-            <blockquote class="quote">
-                "The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt
-            </blockquote>
-            <blockquote class="quote">
-                "It always seems impossible until it's done." - Nelson Mandela
-            </blockquote>
-            <blockquote class="quote">
-                "Act as if what you do makes a difference. It does." - William James
-            </blockquote>
-            <blockquote class="quote">
-                "We can't help everyone, but everyone can help someone." - Ronald Reagan
-            </blockquote>
-            <blockquote class="quote">
-                "Life is 10% what happens to us and 90% how we react to it." - Charles R. Swindoll
-            </blockquote>
-            <blockquote class="quote">
-                "The only limit to our realization of tomorrow is our doubts of today." - Franklin D. Roosevelt
-            </blockquote>
-            <blockquote class="quote">
-                "Do not wait to strike till the iron is hot, but make it hot by striking." - William Butler Yeats
-            </blockquote>
-            <blockquote class="quote">
-                "Strive not to be a success, but rather to be of value." - Albert Einstein
-            </blockquote>
-            <blockquote class="quote">
-                "The best way to predict the future is to create it." - Abraham Lincoln
-            </blockquote>
-            <blockquote class="quote">
-                "Your time is limited, so don't waste it living someone else's life." - Steve Jobs
-            </blockquote>
-            <blockquote class="quote">
-                "It’s not whether you get knocked down, it’s whether you get up." - Vince Lombardi
-            </blockquote>
-            <blockquote class="quote">
-                "The only thing standing between you and your goal is the story you keep telling yourself." - Jordan Belfort
-            </blockquote>
-            <blockquote class="quote">
-                "Nothing is impossible, the word itself says 'I'm possible!'" - Audrey Hepburn
-            </blockquote>
-            <blockquote class="quote">
-                "The best revenge is massive success." - Frank Sinatra
-            </blockquote>
+    
+    
+    <!-- Product Section -->
+    <section id="products">
+        <h2>OUR PRODUCT</h2>
+            <!-- Product Card Example -->
+            <div class="product-card">
+            <img src="https://d1ixo36kppfedg.cloudfront.net/faceview/ci/i9f/e3d/cc/imgs/pd/1713703736934_04.jpg" alt="Dress">
+            <h3>Dress</h3>
+            <p>Stylish and comfortable dress for all occasions.</p>
+            <p class="price">$39.99</p>
+            <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 2: Mobile -->
+            <div class="product-card">
+                <img src="https://iplanet.one/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__en-IN.jpg?v=1695427946" alt="Mobile">
+                <h3>Smartphone</h3>
+                <p>Latest model with high-speed performance and amazing features.</p>
+                <p class="price">$699.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 3: Watch -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61ZjlBOp+rL.jpg" alt="Watch">
+                <h3>Luxury Watch</h3>
+                <p>Elegant watch for a refined look, perfect for all events.</p>
+                <p class="price">$149.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 4: Shoes -->
+            <div class="product-card">
+                <img src="https://thedapperman.in/cdn/shop/products/2_20ae6411-e058-4b28-ac12-02eb4e095840.jpg?v=1674749413&width=720s" alt="Shoes">
+                <h3>Sports Shoes</h3>
+                <p>Comfortable and durable shoes for all your sports activities.</p>
+                <p class="price">$59.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 5: Laptop -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/510uTHyDqGL.jpg" alt="Laptop">
+                <h3>Gaming Laptop</h3>
+                <p>High-performance laptop designed for gaming and productivity.</p>
+                <p class="price">$1,199.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 6: Tablet -->
+            <div class="product-card">
+                <img src="https://www.jiomart.com/images/product/original/492573487/lenovo-tab-k10-26-16-cm-10-3-inch-tablet-4-gb-ram-64-gb-abyss-blue-tb-x6c6x-digital-o492573487-p590910745-0-202111270119.jpeg?im=Resize=(420,420)" alt="Tablet">
+                <h3>Tablet</h3>
+                <p>Portable and versatile tablet for work, play, and entertainment.</p>
+                <p class="price">$349.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 7: Backpack -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhDg2iaVjXilpc_J7xFnUHvnR5-dMFa5Wi4Q&s" alt="Backpack">
+                <h3>Travel Backpack</h3>
+                <p>Perfect for carrying your essentials on trips and adventures.</p>
+                <p class="price">$45.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 8: Sunglasses -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg3FxfUTdQs0o5UUVxEJYwl-Ksb078HF1CIQ&s" alt="Sunglasses">
+                <h3>Stylish Sunglasses</h3>
+                <p>Protect your eyes and look great with these trendy sunglasses.</p>
+                <p class="price">$19.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 9: Jacket -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiyzyTLSuzpYM5FvXa9XdMu2cm39Dl_a5U1g&s" alt="Jacket">
+                <h3>Winter Jacket</h3>
+                <p>Warm and cozy jacket to keep you comfortable during the cold season.</p>
+                <p class="price">$89.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 10: Camera -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTQg5thlAX_bsnusqBXPsjAgX1trvVeqmo-A&s" alt="Camera">
+                <h3>Camera</h3>
+                <p>Capture high-quality photos and videos with this camera.</p>
+                <p class="price">$299.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 11: Headphones -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvoKI0t9eqlse6cG-CdGXuBxwBrP4493r0-g&s" alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p>Noise-canceling wireless headphones for a premium audio experience.</p>
+                <p class="price">$129.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 12: Microwave -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKM7iqbU0qJLlStP6BCM4whyuH0_kP-aFEyw&s" alt="Microwave">
+                <h3>Microwave Oven</h3>
+                <p>Compact microwave perfect for quick meals.</p>
+                <p class="price">$89.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 14: Bed -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH7CpxDKYEOMhHXAPNK1yMvnmQU1hpLuYFwA&s" alt="Bed">
+                <h3>Queen Size Bed</h3>
+                <p>Comfortable bed for a good night’s sleep.</p>
+                <p class="price">$299.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 15: Sofa -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrNLV1Z8KQaa_WMJtKpa_kO3IKSL3b6l6r7g&s" alt="Sofa">
+                <h3>Luxury Sofa</h3>
+                <p>Spacious and comfortable sofa for your living room.</p>
+                <p class="price">$699.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 17: T-Shirt -->
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="T-Shirt">
+                <h3>Graphic T-Shirt</h3>
+                <p>Comfortable t-shirt with cool graphic designs.</p>
+                <p class="price">$19.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 18: Coffee Maker -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmHVMs3Uvr7WwWvA-KxivmBx78ArUS5jsjoA&s" alt="Coffee Maker">
+                <h3>Coffee Maker</h3>
+                <p>Make your favorite coffee right at home with this coffee maker.</p>
+                <p class="price">$59.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 19: Camera Tripod -->
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="Tripod">
+                <h3>Camera Tripod</h3>
+                <p>Stable tripod for steady camera shots.</p>
+                <p class="price">$49.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+            <!-- Product 20: Book -->
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPDxAPEA8NDw0PDxAPDQ8PDw8PDQ8NFRIWFhUSFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDQ0OFRAPFysdFR0tKzc3KystLS0tLS0tKy03Ny0tLSstLS0rKys3KysrKysrNy0tKysrKysrKzcrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAAAgEDBQQGB//EAD0QAQEAAQAGAg4IBwEBAAAAAAABAgMEBTNysQYRFCEiIzFBUVJxc4GRssESMkJhgqHR4RNTYoOS0vCiFf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABoRAQEBAQEBAQAAAAAAAAAAAAABMQISESH/2gAMAwEAAhEDEQA/AP3EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4dc1+4aXR6LHGW6TrttvVMcZ43ucTat6tZ0V8uHV+dWDp5abKXq7Xa+6/q13Wc/Jh+bOk8N9LVVkgzdb0nm4f+kXXtL5mHv/cqKvkXNc0vmYf5Y/7M9k6fxaPH3z/ZprFPI9F0+sfy8f8Avax2RrH8ue793m6+pn+JlPtZe+p5Vv7I1j+XPd+52Tp/Mnu/do/j5+deZNbz8vX7IeT7G7snT+ZPd+7PZOn8z8v3aezcvJjfZf1Zm0L5svt6j4fjb2TpvNn+P7s9k6bzZ7mn/wCh/R+bM2hj5MvdD4v423WdL5s9yMta03mz/GsdnYeWz2VjPXO11y9rwe1Ph+L1XXdJlpMcMpj2+vr7Vlna9LpuFs7SfT0uGXjsvKu6iUAEAAAAAAAAHB29erTaC+mfm7z5/pP2s9Bf6rzizR1dJ4a1Vt0vhv8A3iaq1BNRkuoyUSmqqQYqazWKCamqqaCWKymgxkmqqQTWvT6TqwvHfzlXXj1/Lq7X3z5pWuddPYV7vRcOXKvo3zWwL3ej4Lyr6Vg60AGQAAAAAAAB8/0r8Ogv9dnJ9A4HS2dxob5NLOSwdPSeH2Tk11V8XDjyia3BNRV1NBFTV1FBNTVMUEVK6gGE1SaDCVVig15RztpXt/4ulXK2pe79mPNK1zrsdH95o+C8n0z5no/vcPV3k+mYTrQAQAAAAAAAAcLpZO96P1sd1xelU71h6yEHs8WPDjyTV4/Vx4MU1uCairqKompqqkEMVVTQTYirqaCWKpNBNSqsAjJydq/X/Dj8VdauRtbeTgx+KpWuddno9vcPV19O+a6PTvmPq6+lYTrQAQAAAAAAAAcjpNO84+sx+bruV0knecfWY8qDdoe3hhwTnWanV93hw/OqrcEVNVU1RNTVVNBFjFZrFBGSaqxNBLGSk0E1NWkEVx9rb2cGPxZOxXH2re/TgnPJKvOu50d3mPq78n0r5vo7vJ6r9H0jB1oAIAAAAAAAAOZ0hneZ6zH5um523p3m8WPMDVL3rD0X4qqo1Ld4/i5ttjcGupq7E2KIsTV1FBDFVU0EMVXUxYCE1dTQSlSaCa421d9OCc8nZyjjbV304JzySrzrvdHZ3yeq+cfRvneju8/tfOPomDrQAQAAAAAAAAeDbm4y9OPOPe8O2p3jP8PxQGvUd3j6b8m6tGz91j6byjdWhNTVVNaEVNVU2AmpqqgGKmqqaCamqqaDFTVMAiuNtbe48E55OzXG2tvpwznklXnX0HR36/8Aa+cfQPn+js7u+q+cfQMF0AEAAAAAAAAHi2xuNJ6Jzj2vJtWd40nCDzbL3OPpvKPTXk2Re8z0162hFTVVFaE1FXUUE3mmqqaDFTVVNBNTVVFBjqYrLAJrjbV32PDOddmuPtXe48E+LJKs19B0d+vfVznHecLo99a+rnN3WC6ACAAAAAAAADzbSnedJwV6Xn1/daTgvIHg2PuvxPZXj2Pu7xfq9laEVNVUVoTUVdTkCams1igmxNUmgmpq6mghiqrFBHU4+1d7jwY/Fk7OTj7U3uPDj8WSVZr6Ho9O6vq5zdxxOj/hvBjzdtgugAgAAAAAAAA065u8+DLk3NOt7vPgy5A5uxt3eKcq9teLZE7jLil/KvbWhFTWaitBU0qbQYYrNTaCaxVVIMVNVU9QJrFVWARXH2pvZw4/FXZrjbV3s4ZzqVeX0XR/7XBi7TjdH/HwY/N2WC6ACAAAAAAAADXrM7jPhy5NidLOvGzyyz8gcrZd7i+mPVlXm1DRZ4fSxyxs8HVfFfC3VuBU1lhRNTV1NBKVViwE1iqYBKepRQQwqpoJri7V3s4ZzrtVw9rb78M51K1y+l6PeDLhwnN2XK2BobMPp3q6s5j9GePtdcdVhLoAIAAAAAAAAAAMWMgIuix8ka7q2P3xvF+jy5ap5L72rLVsvuvor3h6o5mWiyn2a12OuxcZfDJV9DkMV1MtXwv2Z7O015alj4rYvqDnMV7ctQviyntjVlqefkl9FX7B5aix6MtDlPDjl7mqwGp5Nb2LptNnNJh9D6Pg6rlZl1y3r8T2WOvs7dz05c6lG3VdD/Dwxwnb+jjJ1+X720GAAAAAAAAAAAAAAAAAAAAAAAAAYuMvhkvpjIDRnqmjv2Z7O02aLRzGfRngnX9/hvWsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//9k=" alt="Book">
+                <h3>Motivational Book</h3>
+                <p>Inspiring book to boost your productivity and mindset.</p>
+                <p class="price">$15.99</p>
+                 <button class="buy-btn" onclick="openPaymentModal()">Buy Now</button>
+            </div>
+
+                            <!-- Payment Modal -->
+                <div id="paymentModal" class="payment-modal">
+                    <div class="payment-modal-content">
+                        <span class="close" onclick="closePaymentModal()">&times;</span>
+                        <h2>Choose a Payment Option</h2>
+                                    <!-- Image Inside Modal (Logo or Payment Option Image) -->
+                        <div class="payment-modal-image">
+                            <img src="bp.jpg" alt="Payment Logo" class="payment-logo">
+                        </div>            
+                        <!-- Payment Options -->
+                        <div class="payment-options">
+                            <button class="payment-option" onclick="selectPayment('Credit Card')">Credit Card</button>
+                            <button class="payment-option" onclick="selectPayment('PayPal')">PayPal</button>
+                            <button class="payment-option" onclick="selectPayment('Google Pay')">Google Pay</button>
+                        </div>
+
+                        <!-- Payment Details Form (hidden by default) -->
+                        <div id="paymentDetails" class="payment-details">
+                     <h3 id="selectedPaymentMethod"></h3>
+                     <p>Enter your payment details below:</p>
+                     <form id="paymentForm">
+                     <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number">
+                   <label for="expiryDate">Expiry Date:</label>
+                     <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                      <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="CVV">
+                                
+                    <button type="submit">Submit Payment</button>
+                  </form>
+                 </div>
+                </div>
+                </div>
+            
         </div>
     </section>
-    
 
+    <!-- About Section -->
+    <section id="about">
     <main>
         <h2>About Us</h2>
-        <p>We offer a variety of services to help you achieve your goals. Our team is dedicated to providing top-notch solutions for your needs.</p>
-        <button>Click Me</button>
+        <p>We offer a variety of products ranging from clothing to gadgets. Our goal is to provide high-quality items at affordable prices.</p>
+     
     </main>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" onclick="scrollToTop()" style="display:none;">Scroll to Top</button>
-
-    <!-- Contact Form -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="#" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message"></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
     </section>
 
+        <!-- Scroll Buttons -->
+        <button id="scrollTop" class="scroll-btn">↑ Top</button>
+        <button id="scrollBottom" class="scroll-btn">↓ Bottom</button>
+
+     <!-- Contact Form -->
+     <section id="contact">
+         <h2>Contact Us</h2>
+         <form id="contactForm" action="#" method="POST">
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name">
+ 
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email">
+ 
+             <label for="message">Message:</label>
+             <textarea id="message" name="message"></textarea>
+ 
+             <button type="submit">Submit</button>
+         </form>
+     </section>
+ 
     <footer>
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
