@@ -14,7 +14,6 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    overflow-x: hidden;
 }
 
 /* Header Styling */
@@ -53,6 +52,7 @@ nav a {
 nav a:hover {
     background-color: #4CAF50;
 }
+
 /* Product Section */
 #products {
     padding: 40px 20px;
@@ -323,7 +323,6 @@ footer p {
         margin: 0;
         padding: 0;
         background-color: #f4f4f9; /* Light background color */
-        overflow-x: hidden;
     }
     
     .content {
@@ -389,21 +388,21 @@ footer p {
     
 
 /* Responsive Design */
-/* Default styles (for larger screens) */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Styles for devices with screen widths up to 768px (tablets and phones) */
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 15px;
-    }
-    .navbar {
-        flex-direction: column;
+    .product-card {
+        width: calc(50% - 40px);
     }
 }
 
+@media (max-width: 480px) {
+    .product-card {
+        width: calc(100% - 40px);
+    }
+    nav a {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+    footer p {
+        font-size: 0.9rem;
+    }
+}
