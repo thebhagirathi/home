@@ -1,10 +1,11 @@
-/* Resetting some default browser styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and border do not affect element's width/height */
+    box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;  /* Clean and modern font */
     background-color: #f4f7fc;  /* Light background for the body */
@@ -30,285 +31,378 @@ header h1 {
     margin: 0;
 }
 
-/* Navigation Bar Styling */
+/* Navigation */
 nav {
-    background-color: #333;  /* Dark background for navigation bar */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 10px 0;
-}
-
-nav ul li {
-    margin: 0 20px;
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;  /* Smooth hover transition */
-    padding: 5px 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin: 0 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #4CAF50;  /* Green background on hover */
-    color: white;
-    border-radius: 5px;  /* Rounded corners */
+    background-color: #4CAF50;
 }
 
-/* Quotes Section Styling */
-#quotes {
-    background-color: #f9f9f9;
+/* Product Section */
+#products {
     padding: 40px 20px;
-    margin: 40px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(250, 250, 250);
-}
-
-#quotes h2 {
-    font-size: 2.5rem;
     text-align: center;
-    color: #000000;
-    margin-bottom: 30px;
 }
 
-/* Styling for individual quotes */
-.quotes-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+#products h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-.quote {
-    font-size: 1.1rem;
-    font-style: italic;
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: calc(33% - 40px);
+    vertical-align: top;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-card p {
     color: #555;
-    padding: 15px;
-    border-left: 5px solid #4CAF50;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-}
-
-.quote:hover {
-    transform: translateY(-5px); /* Hover effect for quotes */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.quote:before {
-    content: '';
-    font-size: 3rem;
-    color: #4CAF50;
-    position: absolute;
-    top: -10px;
-    left: -10px;
-}
-
-.quote:after {
-    content: '"';
-    font-size: 3rem;
-    color: #4CAF50;
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-}
-
-/* Responsive Design for Quotes Section */
-@media (max-width: 768px) {
-    .quotes-container {
-        grid-template-columns: 1fr; /* Stack quotes on top of each other on smaller screens */
-    }
-
-    #quotes h2 {
-        font-size: 2rem;
-    }
-
-    .quote {
-        font-size: 1rem;
-    }
-}
-
-
-/* Main Content Styling */
-main {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(32, 18, 18, 0.527);
-}
-
-main h2 {
-    font-size: 2.5rem;
-    color: #051a62;
-    margin-bottom: 20px;
-}
-
-main p {
     font-size: 1rem;
-    color: #0d0c0c;
-    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    color: #4CAF50;
     margin-bottom: 20px;
 }
 
-button {
+.product-card .buy-btn {
     background-color: #4CAF50;
     color: white;
-    font-size: 1.1rem;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+.product-card .buy-btn:hover {
     background-color: #45a049;
-    transform: translateY(-3px); /* Button animation on hover */
 }
 
-/* Footer Styling */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Payment Modal Styling */
+.payment-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.payment-modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Close Button */
+.payment-modal .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.payment-modal .close:hover,
+.payment-modal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Image in the Modal */
+.payment-modal-image {
+    margin-bottom: 20px; /* Space between the image and title */
+}
+
+.payment-logo {
+    width: 150px; /* Size of the image */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Payment Options Styling */
+.payment-options {
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.payment-option:hover {
+    background-color: #45a049;
+}
+
+/* Payment Details Form Styling */
+.payment-details {
+    display: none;
+}
+
+.payment-details label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.payment-details input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.payment-details button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.payment-details button:hover {
+    background-color: #45a049;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* About Section */
+#about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
 footer {
-    background-color: #000000;
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px;
-    font-size: 1rem;
+    padding: 15px;
 }
 
 footer p {
-    margin: 0;
-    font-size: 1.1rem;
-}
-
-footer a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-footer a:hover {
-    color: white;
-    text-decoration: underline;
-}
-
-/* Scroll-to-Top Button */
-#scrollTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: none;  /* Hidden by default */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-#scrollTopBtn:hover {
-    background-color: #45a049;
-    transform: translateY(-3px);  /* Button hover effect */
-}
-
-/* Form Styling */
-form {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #000000;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #9a0303;
-    border-radius: 5px;
     font-size: 1rem;
-    transition: all 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus {
-    border-color: #4CAF50;
-    outline: none;  /* Remove the outline on focus */
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;  /* Smaller font size for smaller screens */
+    /* scroll style */
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9; /* Light background color */
     }
-
-    nav ul {
-        flex-direction: column;
+    
+    .content {
+        height: 2000px; /* This is just to create a scrollable page */
+        text-align: center;
+        padding: 50px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
     }
-
-    nav ul li {
-        margin: 10px 0;
+    
+    .scroll-btn {
+        position: fixed;
+        right: 20px; /* Right corner positioning */
+        padding: 15px 25px;
+        background: linear-gradient(135deg, #6e7bff, #667eea); /* Gradient background */
+        color: white;
+        border: 2px solid transparent;
+        border-radius: 30px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        z-index: 1000;
     }
-
-    main {
-        padding: 20px;
+    
+    /* Hover Effect */
+    .scroll-btn:hover {
+        background: linear-gradient(135deg, #667eea, #6e7bff); /* Reversed gradient on hover */
+        transform: translateY(-4px); /* Lift effect */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Deeper shadow */
     }
-
-    button {
-        width: 100%;  /* Full-width button on mobile */
+    
+    /* Stacked button positioning */
+    #scrollTop {
+        bottom: 80px; /* Positioned slightly above the scroll-to-bottom button */
     }
-
-    footer {
-        font-size: 0.9rem;
+    
+    #scrollBottom {
+        bottom: 20px; /* Positioned at the bottom */
     }
-
-    #scrollTopBtn {
-        bottom: 20px;
-        right: 20px;
-        font-size: 1rem;
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .scroll-btn {
         padding: 10px 15px;
+        font-size: 16px;
+        }
+    
+        #scrollTop {
+        bottom: 60px; /* Adjust for smaller screens */
+        }
+    
+        #scrollBottom {
+        bottom: 20px; /* Adjust for smaller screens */
+        }
+    }
+    
+    /* Make buttons only visible when needed */
+    #scrollTop, #scrollBottom {
+        display: none; /* Hidden initially */
+    }
+    
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 40px);
     }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 2rem;  /* Even smaller font for very small screens */
+    .product-card {
+        width: calc(100% - 40px);
     }
-
-    form input,
-    form textarea {
-        padding: 10px;  /* Smaller padding on form fields */
+    nav a {
+        font-size: 0.9rem;
+        padding: 10px 15px;
     }
-
-    button {
-        font-size: 1rem;
-    }
-
-    footer {
-        font-size: 0.8rem;  /* Small footer font size */
+    footer p {
+        font-size: 0.9rem;
     }
 }
